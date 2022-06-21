@@ -14,18 +14,18 @@
     <Directory %home%/%user%/web/%domain%/stats>
         AllowOverride All
     </Directory>
-    <Directory %sdocroot%>
+    <Directory %home%/%user%/web/%domain%>
         AllowOverride All
         Options +Includes -Indexes +ExecCGI
     </Directory>
-#    <IfModule mod_ruid2.c>
-#        RMode config
-#        RUidGid %user% %group%
-#        RGroups www-data
-#    </IfModule>
-#    <IfModule itk.c>
-#        AssignUserID %user% %group%
-#    </IfModule>
+    <IfModule mod_ruid2.c>
+        RMode config
+        RUidGid %user% %group%
+        RGroups www-data
+    </IfModule>
+    <IfModule itk.c>
+        AssignUserID %user% %group%
+    </IfModule>
 
     <FilesMatch \.php$>
         SetHandler "proxy:unix:/run/php/php7.0-fpm-%domain%.sock|fcgi://localhost/"
