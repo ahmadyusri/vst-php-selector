@@ -32,12 +32,12 @@ chmod a+x ./vst-php-fpm.sh
 sudo ./vst-php-fpm.sh 
 ```
 
-After running the script, you should choose the versions of php for example (7.2 7.4)
+After running the script, you should choose the versions of php for example (7.2 and 8.1)
 Script add repository and install chosen base versions of php.
 Then you should install extensions rof example
 ```bash
 $ sudo apt install php7.2-curl 
-$ sudo apt install php7.4-curl
+$ sudo apt install php8.1-curl
 ```
 or
 ```bash
@@ -50,7 +50,7 @@ $ sudo apt install php8.0-apcu php8.0-mbstring php8.0-bcmath php8.0-cli php8.0-c
 $ sudo apt install php8.1-apcu php8.1-mbstring php8.1-bcmath php8.1-cli php8.1-curl php8.1-gd php8.1-intl php8.1-mcrypt php8.1-mysql php8.1-soap php8.1-xml php8.1-xmlrpc php8.1-zip php8.1-memcache php8.1-memcached php8.1-ldap
 ```
 
-For old version of Ubuntu
+For old version of PHP
 
 ```bash
 $ sudo apt-get install php5.6-apcu php5.6-mbstring php5.6-bcmath php5.6-cli php5.6-curl php5.6-gd php5.6-intl php5.6-mcrypt php5.6-mysql php5.6-soap php5.6-xml php5.6-xmlrpc php5.6-json php5.6-zip php5.6-memcache php5.6-memcached php5.6-ldap 
