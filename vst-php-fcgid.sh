@@ -7,15 +7,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # check OS
-if [[ `cat /etc/os-release | grep ^ID=` == "ID=debian" ]]; then
+if [[ $(cat /etc/os-release | grep ^ID=) == "ID=debian" ]]; then
     apt install -y apt-transport-https lsb-release ca-certificates wget
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
     apt update
-elif [[ `cat /etc/os-release | grep ^ID=` == "ID=ubuntu" ]]; then
+elif [[ $(cat /etc/os-release | grep ^ID=) == "ID=ubuntu" ]]; then
     apt update
     add-apt-repository ppa:ondrej/php
-else    
+else
     echo "This script must be run on Ubuntu or Debian"
     exit 0
 fi
@@ -26,7 +26,7 @@ echo "You can enter multiple versions through 'space'."
 echo "Enter php version/versions(for example 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1):"
 read -p ">" vers
 
-site_link="https://raw.githubusercontent.com/rikcage/vst-php-selector/main/fcgid"
+site_link="https://raw.githubusercontent.com/ahmadyusri/vst-php-selector/main/fcgid"
 
 for ver in $vers; do
 
