@@ -32,6 +32,22 @@ chmod a+x ./vst-php-fpm.sh
 sudo ./vst-php-fpm.sh 
 ```
 
+Install **software-properties-common**, which adds management for additional software sources:
+```bash
+$ sudo apt -y install software-properties-common
+# The -y flag will automatically agree to the installation. Without that, you would receive a prompt in your terminal window for each installation.
+```
+
+Install the repository **ppa:ondrej/php**, which will give you all your versions of PHP:
+```bash
+$ sudo add-apt-repository ppa:ondrej/php
+```
+
+Update apt-get so your package manager can see the newly listed packages:
+```bash
+$ sudo apt-get update
+```
+
 After running the script, you should choose the versions of php for example (7.2 and 8.1)
 Script add repository and install chosen base versions of php.
 Then you should install extensions rof example
